@@ -1,0 +1,4 @@
+<map id="Observer" name="Observer">
+<area shape="rect" id="node2" href="$classDataToConsole.html" title="{DataToConsole\n||+ DataToConsole()\l+ update()\l}" alt="" coords="5,131,148,223"/>
+<area shape="rect" id="node3" href="$classDataToFile.html" title="{DataToFile\n||+ DataToFile()\l+ update()\l}" alt="" coords="172,131,283,223"/>
+</map>
