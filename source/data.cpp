@@ -98,10 +98,10 @@
     void DataToConsole::update(Bulk bulk)
     {
         std::cout << "bulk: ";
-        for(auto& str : bulk.first)
+        for(auto str = bulk.first.begin(); str!=bulk.first.end(); ++str)
         {
-            if(str==bulk.first[0]) std::cout << str;
-            else std::cout << ", " << str;
+            if(str==bulk.first.begin()) std::cout << *str;
+            else std::cout << ", " << *str;
         }
         std::cout << std::endl;
     }
@@ -122,10 +122,10 @@
         if (out.is_open(),std::ios::app)
         {
             out << "bulk: ";
-            for(auto& str : bulk.first)
+            for(auto str = bulk.first.begin(); str!=bulk.first.end(); ++str)
             {
-                if(str==bulk.first[0]) out << str;
-                else out << ", " << str;
+                if(str==bulk.first.begin()) out << *str;
+                else out << ", " << *str;
             }
         }
         out.close();
