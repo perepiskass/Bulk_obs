@@ -30,7 +30,7 @@ public:
     int getQuantity();
     DataIn(int count);
 private:
-    void checkDilimiter(std::string& str);
+    void checkDilimiter(const std::string& str);
     void clearData();
 
     std::pair<bool,uint8_t> checkD; ///< переменная для проверки использования знаков динамического разделения блоков "{" и "}" и хранения состояния о их кол-ве

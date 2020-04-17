@@ -10,7 +10,7 @@
         subs.push_back(obs);
     }
 
-    void DataIn::checkDilimiter(std::string& str)
+    void DataIn::checkDilimiter(const std::string& str)
     {
         if (str == "{")
         {
