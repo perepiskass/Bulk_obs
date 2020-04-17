@@ -17,7 +17,11 @@
             if(checkD.first) ++checkD.second;
             else
             {
-                bulk.first.clear();
+                if(bulk.first.size())
+                {
+                    notify();
+                    bulk.first.clear();
+                }
                 checkD.first = true;
                 ++checkD.second;
             }
@@ -40,11 +44,12 @@
                 {
                     bulk.second = std::chrono::seconds(std::time(NULL));
                 }
-                bulk.first.emplace_back(str);
+                bulk.first.emplace_back(std::forward<std::string>(str));
             }
             else if (!checkD.second)
             {
                 notify();
+                clearData();
             }
         }
         else
@@ -55,12 +60,13 @@
                 {
                     bulk.second = std::chrono::seconds(std::time(NULL));
                 }
-                bulk.first.emplace_back(str);
+                bulk.first.emplace_back(std::forward<std::string>(str));
                 --countTry;
             }
             if(!countTry)
             {
                 notify();
+                clearData();
             }
         }
         
@@ -72,7 +78,6 @@
         {
             s->update(bulk);
         }
-        clearData();
     }
 
     void DataIn::clearData()

@@ -19,7 +19,8 @@ void checkArg(int argc,char** argv)
         }
         else
         {
-            if (atoi(argv[1]) > 0)  countBulk = atoi(argv[1]);
+            auto at = atoi(argv[1]);
+            if (at > 0)  countBulk = at;
             else  
             {
 
